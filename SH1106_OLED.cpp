@@ -2,10 +2,6 @@
 #include "Adafruit_SH1106.h"
 using namespace pxt;
 
-/**
- * Provides access to basic micro:bit functionality.
- */
-//% color=#1E90FF weight=116 icon="\uf00a"
 namespace OLED {
 	#define SSD1306_ADDRESS 0x78
 	#undef printf
