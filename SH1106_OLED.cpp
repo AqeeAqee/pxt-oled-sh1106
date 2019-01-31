@@ -2,6 +2,10 @@
 #include "Adafruit_SH1106.h"
 using namespace pxt;
 
+/**
+ * Provides access to basic micro:bit functionality.
+ */
+//% color=#1E90FF weight=116 icon="\uf00a"
 namespace OLED {
 	#define SSD1306_ADDRESS 0x78
 	#undef printf
@@ -24,6 +28,11 @@ namespace OLED {
 		oled->display();
 		oled->setTextCursor(0, 0);
 	}
+
+    //%
+    void drawPixel(int x, int y){
+        oled->drawPixel(x,y,1);
+    }
 	
 	//%
     void showString(String text) { //aqee, fixed
@@ -35,6 +44,11 @@ namespace OLED {
     //%
     void showNumber (int number) {
 		oled->printf("%d\n", number);
+		oled->display();
+	}
+
+    //%
+	void display(){
 		oled->display();
 	}
 
@@ -51,8 +65,18 @@ namespace OLED {
 	}
 
 	//%
-	void drawCircle(int x, int y, int r){
-		oled->drawCircle(x, y, r, 0xFFFF);
+	void textSize(int s){
+        oled->setTextSize(s);
+	}
+
+	//%
+	void textWrap(bool b){
+        oled->setTextWrap(b);
+	}
+
+    //%
+    void drawCircle(int x, int y, int r){
+		oled->drawCircle(x, y, r, WHITE);
 	}
 
 	//%
