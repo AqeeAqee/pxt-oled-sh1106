@@ -16,7 +16,8 @@
         "Adafruit_GFX.cpp",
         "Adafruit_GFX_Config.h",
         "glcdfont.h",
-        "enums.d.ts"
+        "enums.d.ts",
+        "shims.d.ts"
     ],
     "testFiles": [
         "tests.ts"
