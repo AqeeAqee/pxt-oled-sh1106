@@ -2,6 +2,7 @@
 #include "Adafruit_SH1106.h"
 using namespace pxt;
 
+
 namespace OLED {
 	#define SSD1306_ADDRESS 0x78
 	#undef printf
