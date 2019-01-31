@@ -27,6 +27,31 @@ namespace OLED {
     }
 
     /**
+     * pour all draw in buffer to real screen.
+     */
+    //% blockId=oled_display
+    //% block="OLED display to screen"
+    //% icon="\uf1ec" 
+    //% shim=OLED::display
+    export function display(): void {
+        return;
+    }
+
+
+    /**
+     * moves the draw a Pixel.
+     * @param x x (in pixels), eg: 11
+     * @param y y (in pixels), eg: 11
+     */
+    //% blockId=oled_draw_pixel
+    //% block="draw a Pixel at x %x|y %y"
+    //% icon="\uf1ec" 
+    //% shim=OLED::drawPixel
+    export function drawPixel(x: number = 1, y: number = 1): void {
+        return;
+    }
+
+    /**
      * moves the text cursor.
      * @param x x (in pixels), eg: 11
      * @param y y (in pixels), eg: 11
@@ -36,6 +61,44 @@ namespace OLED {
     //% icon="\uf1ec" 
     //% shim=OLED::textCursor
     export function textCursor(x: number = 1, y: number = 1): void {
+        return;
+    }
+
+    /**
+     * set the text size.
+     * @param s s (in pixels), eg: 2
+     */
+    //% blockId=oled_text_size
+    //% block="set text size |s %s"
+    //% icon="\uf1ec" 
+    //% shim=OLED::textSize
+    export function textSize(s: number = 1): void {
+        return;
+    }
+
+    /**
+     * set the text wrap or not at line right edge.
+     * @param b b (in pixels), eg: false
+     */
+    //% blockId=oled_text_wrap
+    //% block="set text wrap |b %b"
+    //% icon="\uf1ec" 
+    //% shim=OLED::textWrap
+    export function textWrap(b: boolean): void {
+        return;
+    }
+
+    /**
+     * initialises the i2c OLED display
+     * @param x x (in pixels), eg: 22
+     * @param y y (in pixels), eg: 22
+     * @param r r (in pixels), eg: 11
+     */
+    //% blockId=oled_draw_circle
+    //% block="draw circle x %x|y %y|r %r"
+    //% icon="\uf1ec" 
+    //% shim=OLED::drawCircle
+    export function drawCircle(x: number = 10, y: number = 10, r: number = 10): void {
         return;
     }
 
