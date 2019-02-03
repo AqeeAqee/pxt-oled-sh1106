@@ -10,6 +10,11 @@ namespace OLED {
 	MicroBitI2C i2c(I2C_SDA0, I2C_SCL0);
 	Adafruit_SSD1306_I2c *oled;
 
+	//aqee, for around a bug of makecode
+	//https://github.com/Microsoft/pxt/issues/4033
+	//rect round radius
+	int _r=1;
+
 	void init(int height, int width){
 		if (oled != NULL) delete oled;
 		oled = new Adafruit_SSD1306_I2c(i2c, SSD1306_ADDRESS, height, width);
@@ -78,12 +83,12 @@ namespace OLED {
 
 	//%
 	void fillCircle(int x, int y, int r){
-		oled->fillCircle(x, y, r, 0xFFFF);
+		oled->fillCircle(x, y, r, WHITE);
 	}
 
 	//%
 	void drawLine(int x0, int y0, int x1, int y1){
-		oled->drawLine(x0, y0, x1, y1, 0xFFFF);
+		oled->drawLine(x0, y0, x1, y1, WHITE);
 	}
 
 	//%
@@ -98,27 +103,33 @@ namespace OLED {
 
 	//%
     void drawRect(int x, int y, int w, int h){
-    	oled->drawRect(x, y, w, h, 0xFFFF);
+    	oled->drawRect(x, y, w, h, WHITE);
     }
 
+	//%
+	void setRoundRectRadius(int r)
+	{
+		_r=r;
+	}
+
     //%
-	void fillRoundRect(int x, int y, int w, int h, int r){
-		oled->fillRoundRect(x, y, w, h, r, 0xFFFF);
+	void fillRoundRect(int x, int y, int w, int h){
+		oled->fillRoundRect(x, y, w, h, _r, WHITE);
 	}
 
 	//%
-    void drawRoundRect(int x, int y, int w, int h, int r){
-    	oled->drawRoundRect(x, y, w, h, r, 0xFFFF);
+    void drawRoundRect(int x, int y, int w, int h){
+    	oled->drawRoundRect(x, y, w, h, _r, WHITE);
     }
 
     //%
     void drawTriangle(int x0, int y0, int x1, int y1, int x2, int y2){
-    	oled->drawTriangle(x0, y0, x1, y1, x2, y2, 0xFFFF);
+    	oled->drawTriangle(x0, y0, x1, y1, x2, y2, WHITE);
     }
 
     //%
     void fillTriangle(int x0, int y0, int x1, int y1, int x2, int y2){
-    	oled->fillTriangle(x0, y0, x1, y1, x2, y2, 0xFFFF);
+    	oled->fillTriangle(x0, y0, x1, y1, x2, y2, WHITE);
     }
 
     #define printf(...) uBit.serial.printf(__VA_ARGS__)
