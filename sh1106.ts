@@ -2,6 +2,46 @@
 //% color="255" weight="90"
 namespace OLED {
 
+    //%
+    export class Point {
+        public x: number;
+        public y: number;
+    }
+
+    /**
+     * get a Point with X, Y
+     * @param x x, eg: 1
+     * @param y y, eg: 2
+     */
+    //% blockId=oled_create_point
+    //% block="%x,%y"
+    export function createPoint(x: number, y: number): Point {
+        let p = new Point();
+        p.x = x;
+        p.y = y;
+        return p;
+    }
+
+    /**
+     * draws a Triangle
+     * @param p1 p1 Point
+     * @param p2 p2 Point
+     * @param p3 p3 Point
+     */
+    //% blockId=oled_draw_triangle
+    //% block="draw a Triangle at points: %p1=oled_create_point(2,2), %p2=oled_create_point(11,2), %p3=oled_create_point(2,11)"
+    //% inlineInputMode=inline
+    //% icon="\uf1ec" 
+    export function drawTriangle(p1: Point, p2: Point, p3: Point): void {
+        drawTriangle1(p1.x, p1.y, p2.x, p2.y)
+        return;
+    }
+
+    //% shim=OLED::drawTriangle
+    function drawTriangle1(x1: number, y1: number, x2: number, y2: number): void {
+        return;
+    }
+
     /**
      * initialises the i2c OLED display
      * @param height height (in pixels), eg: 64
@@ -210,24 +250,6 @@ namespace OLED {
     }
 
     /**
-     * draws a Triangle
-     * @param x0 x0 (in pixels), eg: 33
-     * @param y0 y0 (in pixels), eg: 60
-     * @param x1 x1 (in pixels), eg: 44
-     * @param y1 y1 (in pixels), eg: 33
-     * @param x2 x2 (in pixels), eg: 55
-     * @param y2 y2 (in pixels), eg: 22
-     */
-    //% blockId=oled_draw_triangle
-    //% block="draw a Triangle at points: (%x0|, %y0|), (%x1|, %y1|), (%x2|, %y2|)"
-    //% inlineInputMode=inline
-    //% icon="\uf1ec" 
-    //% shim=OLED::drawTriangle
-    export function drawTriangle(x0: number, y0: number, x1: number, y1: number, x2: number, y2: number): void {
-        return;
-    }
-
-    /**
      * draws a filled Triangle
      * @param x0 x0 (in pixels), eg: 33
      * @param y0 y0 (in pixels), eg: 13
@@ -277,7 +299,6 @@ namespace OLED {
     //% blockId=oled_text_wrap
     //% block="set text wrap |b %b"
     //% icon="\uf1ec" 
-    //% shim=OLED::textWrap
     export function textWrap(b: boolean): void {
         return;
     }
