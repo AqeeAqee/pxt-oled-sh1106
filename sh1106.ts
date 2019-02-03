@@ -108,7 +108,7 @@ namespace OLED {
      * @param r r (in pixels), eg: 22
      */
     //% blockId=oled_fill_circle
-    //% block="draw circle at center (%x|, %y), radius =|%r"
+    //% block="draw filled circle at center (%x|, %y), radius =|%r"
     //% inlineInputMode=inline
     //% icon="\uf1ec" 
     //% shim=OLED::fillCircle
@@ -178,14 +178,14 @@ namespace OLED {
     }
 
     /**
-     * draws a rectangle with round corners
+     * draws a round-corners rectangle 
      * @param x x (in pixels), eg: 22
      * @param y y (in pixels), eg: 22
      * @param w w (in pixels), eg: 15
      * @param h h (in pixels), eg: 15
      */
     //% blockId=oled_draw_rect_round
-    //% block="draw a rectangle at (%x|, %y) width:%w| height:%h"
+    //% block="draw a round-corners rectangle at (%x|, %y) width:%w| height:%h"
     //% inlineInputMode=inline
     //% icon="\uf1ec" 
     //% shim=OLED::drawRoundRect
@@ -201,7 +201,7 @@ namespace OLED {
      * @param h h (in pixels), eg: 15
      */
     //% blockId=oled_fill_rect_round
-    //% block="draw a filled rectangle at (%x|, %y) width:%w| height:%h"
+    //% block="draw a filled round-corners rectangle at (%x|, %y) width:%w| height:%h"
     //% inlineInputMode=inline
     //% icon="\uf1ec" 
     //% shim=OLED::fillRoundRect
