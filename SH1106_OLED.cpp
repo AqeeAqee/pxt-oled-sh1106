@@ -128,7 +128,7 @@ namespace OLED {
     }
 
     //%
-    void fillTriangle(int x0, int y0, int x1, int y1, int x2, int y2){
+    void fillTriangle(int x0, int y0, int x1, int y1){
     	oled->fillTriangle(x0, y0, x1, y1, x2, y2, WHITE);
     }
 

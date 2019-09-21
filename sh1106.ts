@@ -33,7 +33,7 @@ namespace OLED {
     //% inlineInputMode=inline
     //% icon="\uf1ec" 
     export function drawTriangle(p1: Point, p2: Point, p3: Point): void {
-        drawTriangle1(p1.x, p1.y, p2.x, p2.y)
+        drawTriangle1(p1.x, p1.y, p2.x, p2.y) //aqee, here seems a issue of makecode, that can't pass args more than 4. 
         return;
     }
 
